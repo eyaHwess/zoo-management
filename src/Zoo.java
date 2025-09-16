@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Zoo {
     Animal [] animals;
     String name;
@@ -5,34 +7,23 @@ public class Zoo {
     int nbrCages;
 
     public Zoo(String city, String name, int nbrCages) {
-        this.animals = new Animal[25];
+        if (nbrCages>25){
+            throw new IllegalArgumentException("nbr Cages can't be greater than 25");
+        }
+        this.animals = new Animal[nbrCages];
         this.city = city;
         this.name = name;
         this.nbrCages = nbrCages;
     }
     public Zoo(){};
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public int getNbrCages() {
-        return nbrCages;
-    }
-
-    public void setNbrCages(int nbrCages) {
-        this.nbrCages = nbrCages;
+    @Override
+    public String toString() {
+        return "Zoo{" +
+                "animals=" + Arrays.toString(animals) +
+                ", name='" + name + '\'' +
+                ", city='" + city + '\'' +
+                ", nbrCages=" + nbrCages +
+                '}';
     }
 }

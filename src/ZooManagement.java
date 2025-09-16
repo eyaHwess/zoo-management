@@ -4,25 +4,30 @@ import java.util.Scanner;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class ZooManagement {
     public static void main(String[] args) {
-        int nbrCages=20;
-        String zooName="my zoo";
-//        Instruction 1
-//        System.out.println(zooName + " comporte " + nbrCages + " cages")
-//        Instruction 2
-        Scanner input = new Scanner(System.in);
-        System.out.println("Enter zoo name:");
-        zooName=input.nextLine();
-        while(zooName.isEmpty()){
-            System.out.println("Enter zoo name:");
-            zooName=input.nextLine();
-        }
-        System.out.println("Enter cage number:");
-        nbrCages=input.nextInt();
-        while(nbrCages<0){
-            System.out.println("Enter cage number:");
-            nbrCages=input.nextInt();
-        }
-        System.out.println(zooName+ " comporte " + nbrCages + " cages");
-        
+//        int nbrCages=20;
+//        String zooName="my zoo";
+////        Instruction 1
+////        System.out.println(zooName + " comporte " + nbrCages + " cages")
+////        Instruction 2
+//        Scanner input = new Scanner(System.in);
+//        System.out.println("Enter zoo name:");
+//        zooName=input.nextLine();
+//        while(zooName.isEmpty()){
+//            System.out.println("Enter zoo name:");
+//            zooName=input.nextLine();
+//        }
+//        System.out.println("Enter cage number:");
+//        nbrCages=input.nextInt();
+//        while(nbrCages<0){
+//            System.out.println("Enter cage number:");
+//            nbrCages=input.nextInt();
+//        }
+//        System.out.println(zooName+ " comporte " + nbrCages + " cages");
+        Animal a1=new Animal();
+        a1.name="lion";
+        Zoo myZoo=new Zoo("myZoo","tunis",2);
+        myZoo.animals[0]=a1;
+        System.out.println(myZoo);
+        System.out.println(myZoo.toString());
     }
 }
